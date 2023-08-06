@@ -20,7 +20,7 @@ const html = () => {
 const js = () => {
     return gulp.src("./src/**/*.js")
     .pipe(concat('all.js'))
-    .pipe(terser())
+    // .pipe(terser())
     .pipe(gulp.dest("./dist/js"))
 }
 // const css = () =>{
