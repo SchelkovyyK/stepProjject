@@ -1,0 +1,106 @@
+.main {
+  background-image: url("../img/mainImages/testmonials-bg\ 1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% calc(100% + 60px);
+  position: relative;
+  // width: 100% ;
+  &__logo {
+    padding-top: 6%;
+    color: #fff;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px; /* 104.167% */
+  }
+  //   todo grid
+  &__grid {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 6%;
+    display: grid;
+    gap: 3vw;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 160px 160px;
+    &__li {
+      position: relative;
+      &__img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &__text {
+        position: absolute;
+        top: 40%;
+        color: #fff;
+        text-align: center;
+        font-family: Lato;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 24px; /* 150% */
+      }
+    }
+  }
+  &__para {
+    margin: auto;
+    width: 80%;
+    padding-top: 2vh;
+    color: #a291a5;
+    text-align: center;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px; /* 150% */
+  }
+  &__img {
+    position: absolute;
+    height: 2px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media only screen and (max-width: 992px) {
+  .main {
+    &__grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 160px 160px 160px;
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .minimizer {
+    width: 80%;
+  }
+  .main {
+    &__grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 160px 160px 160px;
+      &__li {
+        &__text {
+          line-height: 14px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .main {
+    &__grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: 165px 165px 165px 165px 165px 165px;
+      &__li {
+        &__text {
+          line-height: 16px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
