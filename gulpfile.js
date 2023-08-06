@@ -14,14 +14,14 @@ const browserSync = require('browser-sync').create()
 const html = () => {
     return gulp.src("./src/**/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("./dist"))
+    .pipe(gulp.dest("./docs"))
 }
 
 const js = () => {
     return gulp.src("./src/**/*.js")
     .pipe(concat('all.js'))
     // .pipe(terser())
-    .pipe(gulp.dest("./dist/js"))
+    .pipe(gulp.dest("./docs/js"))
 }
 // const css = () =>{
 //     return gulp.src("./src/**/*.css")
@@ -30,7 +30,7 @@ const js = () => {
 //     .pipe(gulp.dest("./dist/css"))
 // }
 const cleanDist = () => {
-    return gulp.src("./dist", {read: false})
+    return gulp.src("./docs", {read: false})
     .pipe(clean())
 }
 
@@ -39,11 +39,11 @@ const scss = () => {
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(concat("all.css"))
     // .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest("./dist/css"))
+    .pipe(gulp.dest("./docs/css"))
 }
 const img = () => {
     return gulp.src('./src/**/*.+(png|jpg|svg|jpeg)')
-		.pipe(gulp.dest('./dist/'))
+		.pipe(gulp.dest('./docs/'))
 }
 // const img = () => {
 //     return imgMin.src('src/img/**/*.{jpg,png,svg,gif,ico}').pipe(imagemin()).pipe(gulp.dest('dist/img'));
@@ -51,7 +51,7 @@ const img = () => {
 const dev = () => {
     browserSync.init({
         server: {
-            baseDir: "./dist"
+            baseDir: "./docs"
         }
     });
 
